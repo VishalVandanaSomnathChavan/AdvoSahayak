@@ -1,0 +1,27 @@
+{
+  "name": "advo-sahayak",
+  "version": "1.0.0",
+  "description": "AI-Powered Legal Workflow Agent",
+  "scripts": {
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install-all": "npm run install-server && npm run install-client",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "start:dev": "concurrently -k -n BACKEND,FRONTEND \"npm --prefix server run dev\" \"npm --prefix client run dev -- --port 5175 --strictPort",
+    "build": "npm --prefix client run build",
+    "lint": "npm --prefix client run lint",
+    "test": "npm --prefix server test",
+    "test:integration": "npm --prefix server run test:integration",
+    "start": "npm run build && npm --prefix server start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "legal",
+    "ai",
+    "workflow"
+  ],
+  "author": "",
+  "license": "ISC"
+}
